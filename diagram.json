@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "author": "Bora Yıldız",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-breadboard",
+      "id": "bb1",
+      "top": 93,
+      "left": 98.8,
+      "attrs": { "color": "#eeefed" }
+    },
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 384.6, "left": 169.2, "attrs": {} },
+    { "type": "wokwi-ds1307", "id": "rtc1", "top": -34.2, "left": 614.5, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": 36.4,
+      "left": 854.4,
+      "attrs": { "hornColor": "#ccc" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -134.3,
+      "left": 303.9,
+      "rotate": 270,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 117.6,
+      "left": 779.4,
+      "attrs": { "volume": "10.0" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -116.5, "left": 412.6, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -291.2,
+      "left": 178.4,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": 311.2,
+      "left": 874.7,
+      "attrs": { "common": "cathode" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -191.7, "left": 503.4, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 168,
+      "left": 364.25,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 168,
+      "left": 383.45,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 168,
+      "left": 373.85,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "mega:5V", "bb1:bp.1", "red", [ "v26.1", "h-266.5", "v-278.4" ] ],
+    [ "mega:GND.2", "bb1:bn.1", "black", [ "v16.5", "h-266.65", "v-249.6" ] ],
+    [ "lcd1:VCC", "bb1:bp.2", "red", [ "h0" ] ],
+    [ "lcd1:GND", "bb1:bn.2", "black", [ "h0" ] ],
+    [ "lcd1:SDA", "bb1:3t.a", "blue", [ "h0" ] ],
+    [ "lcd1:SCL", "bb1:4t.a", "green", [ "h0" ] ],
+    [ "rtc1:5V", "bb1:bp.4", "red", [ "h-67.2", "v47.6", "h-9.6" ] ],
+    [ "rtc1:GND", "bb1:bn.5", "black", [ "h-57.6", "v76.8", "h-374.4" ] ],
+    [ "rtc1:SDA", "bb1:3t.e", "blue", [ "h-48", "v66.9", "h-374.4" ] ],
+    [ "rtc1:SCL", "bb1:4t.e", "green", [ "h-38.4", "v67", "h-374.4" ] ],
+    [ "mega:20", "bb1:3b.i", "blue", [ "v0" ] ],
+    [ "mega:21", "bb1:4b.i", "green", [ "v0" ] ],
+    [ "bb1:3t.b", "bb1:3b.h", "blue", [ "v0" ] ],
+    [ "bb1:4t.b", "bb1:4b.h", "green", [ "v0" ] ],
+    [ "dht1:VCC", "bb1:bp.8", "red", [ "v67.2", "h-297.6" ] ],
+    [ "dht1:GND", "bb1:bn.9", "black", [ "v76.8", "h-9.6" ] ],
+    [ "dht1:SDA", "bb1:13t.a", "blue", [ "v86.4", "h-287.9" ] ],
+    [ "bb1:13t.b", "bb1:13b.j", "yellow", [ "v0" ] ],
+    [ "mega:2", "bb1:13b.i", "orange", [ "v0" ] ],
+    [ "servo1:V+", "bb1:bp.11", "red", [ "h0" ] ],
+    [ "servo1:GND", "bb1:bn.12", "black", [ "h0" ] ],
+    [ "servo1:PWM", "mega:12", "orange", [ "v182.4", "h28.8" ] ],
+    [ "bz1:1", "mega:8", "purple", [ "v-67.2", "h-499.2" ] ],
+    [ "bz1:2", "bb1:bn.15", "black", [ "v-76.8", "h-518.8" ] ],
+    [ "btn1:1.l", "mega:3", "red", [ "v220.8", "h67.2" ] ],
+    [ "btn1:2.l", "bb1:bn.18", "black", [ "v0" ] ],
+    [ "pot1:VCC", "bb1:bp.20", "red", [ "v28.8", "h-96.8" ] ],
+    [ "pot1:GND", "bb1:bn.20", "black", [ "v19.2", "h-76.8" ] ],
+    [ "pot1:SIG", "mega:A0", "green", [ "v201.6", "h-211.2", "v259.2", "h211.2" ] ],
+    [ "rgb1:R", "r1:2", "red", [ "h0" ] ],
+    [ "rgb1:G", "r2:2", "green", [ "h0" ] ],
+    [ "rgb1:B", "r3:2", "blue", [ "h0" ] ],
+    [ "rgb1:COM", "bb1:bn.24", "black", [ "v0" ] ],
+    [ "r1:1", "mega:6", "red", [ "v201.6", "h-28.8" ] ],
+    [ "r2:1", "mega:7", "green", [ "v172.8", "h-57.6" ] ],
+    [ "r3:1", "mega:5", "blue", [ "v163.2", "h-38.4" ] ],
+    [ "r1:1", "bb1:29t.a", "", [ "$bb" ] ],
+    [ "r2:1", "bb1:31t.a", "", [ "$bb" ] ],
+    [ "r3:1", "bb1:30t.a", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
